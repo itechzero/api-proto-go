@@ -1,0 +1,101 @@
+swagger: "2.0"
+info:
+  title: auth/v1/client_api.proto
+  version: version not set
+tags:
+  - name: ClientAPI
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /v1/clients:
+    post:
+      operationId: ClientAPI_CreateClient
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/v1Client'
+        default:
+          description: An unexpected error response.
+          schema:
+            $ref: '#/definitions/rpcStatus'
+      parameters:
+        - name: client
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/v1Client'
+            required:
+              - client
+      tags:
+        - ClientAPI
+definitions:
+  protobufAny:
+    type: object
+    properties:
+      '@type':
+        type: string
+    additionalProperties: {}
+  rpcStatus:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+      details:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/protobufAny'
+  v1Client:
+    type: object
+    properties:
+      id:
+        type: string
+        title: client id
+      meta:
+        $ref: '#/definitions/v1Meta'
+        title: client metadata
+  v1CreateClientResponse:
+    type: object
+    properties:
+      client:
+        $ref: '#/definitions/v1Client'
+  v1DeleteClientByIDResponse:
+    type: object
+  v1GetClientByIDResponse:
+    type: object
+    properties:
+      client:
+        $ref: '#/definitions/v1Client'
+  v1ListClientsResponse:
+    type: object
+  v1Meta:
+    type: object
+    properties:
+      createdAt:
+        type: string
+        format: date-time
+        title: time the resource was created
+      updatedAt:
+        type: string
+        format: date-time
+        title: time the resource was last updated
+      deletedAt:
+        type: string
+        format: date-time
+        title: time the resource was soft-deleted
+      version:
+        type: integer
+        format: int32
+        description: version of the resource, starts at 0, increments on each modification.
+    title: Metadata struct
+  v1UpdateClientByIDResponse:
+    type: object
+    properties:
+      client:
+        $ref: '#/definitions/v1Client'
