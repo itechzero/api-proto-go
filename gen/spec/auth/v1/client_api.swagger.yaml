@@ -60,6 +60,7 @@ definitions:
       meta:
         $ref: '#/definitions/v1Meta'
         title: client metadata
+    title: Client
   v1CreateClientResponse:
     type: object
     properties:

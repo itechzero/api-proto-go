@@ -90,6 +90,7 @@ func (GrantType) EnumDescriptor() ([]byte, []int) {
 	return file_auth_v1_client_proto_rawDescGZIP(), []int{0}
 }
 
+// Client
 type Client struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
