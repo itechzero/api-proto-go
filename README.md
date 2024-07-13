@@ -10,7 +10,7 @@ This repository contains the Go implementation of the API Proto Definitions for 
 
 To use this repository, follow these steps:
 ```
-go get -u github.com/itechzero/api-proto-go
+go get -u github.com/itechzero/api-proto-go@main
 ```
 
 ## Usage
