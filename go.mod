@@ -1,4 +1,4 @@
-module github.com/itechzero/api-proto-go
+module github.com/itechzero/verse-proto-go
 
 go 1.22
 
