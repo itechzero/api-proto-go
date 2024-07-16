@@ -7,7 +7,7 @@
 package authv1
 
 import (
-	v1 "common/v1"
+	v1 "github.com/itechzero/api-proto-go/gen/grpc/go/common/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
